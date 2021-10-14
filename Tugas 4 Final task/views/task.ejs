@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center mb-5">
+        <div class="col text-center">
+            <form method="post" action="/add-task">
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="taskName">
+                  <input type="hidden" value="<%= name %>" name="id">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Task</button>
+              </form>
+        </div>
+    </div>
+    <% for( let i = 0; i < results.length; i++ ) { %>
+        <% if (results[i].is_done == "white") { %>
+            <a href="/is-done/<%= results[i].id %>" class="list-group-item list-group-item-action mt-4"><%= results[i].name %></a>
+            <a href="/delete-task/<%= results[i].id %>" class="list-group-item list-group-item-action bg-danger">DELETE</a>
+        <% } else if (results[i].is_done == "green") { %>
+            <a href="#" class="list-group-item list-group-item-action active mt-4" aria-current="true">
+                <%= results[i].name %> </a>
+            <a href="/delete-task/<%= results[i].id %>" class="list-group-item list-group-item-action bg-danger">DELETE</a>    
+    <% } %>
+    <% } %>
+    
+  </div>

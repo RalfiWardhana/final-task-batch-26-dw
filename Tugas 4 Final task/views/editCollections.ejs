@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-5">
+    <div class="shadow-lg p-5 mb-5 bg-body rounded">
+        <h1 class="mb-5">Add Genre</h1>
+        <form method="post" action="/edit-collections-success">
+        <div class="mb-3">
+            <label for="title" class="form-label">Collections Name</label>
+            <input type="text" class="form-control" id="title" name="name" value="<%= results[0].name %> ">
+            <input type="hidden" value="<%= results[0].id%>" name="id"> 
+        </div>      
+        <button type="submit" class="btn btn-primary">Changing Collections</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-5">
+    <div class="shadow-lg p-5 mb-5 bg-body rounded">
+        <h1 class="mb-5">Add Collection</h1>
+        <form method="post" action="/add-collections-success">
+        <div class="mb-3">
+            <label for="title" class="form-label">Collections Name</label>
+            <input type="text" class="form-control" id="title" name="name">
+        </div>      
+        <button type="submit" class="btn btn-primary">Adding Collections</button>
+        </form>
+    </div>
+</div>
